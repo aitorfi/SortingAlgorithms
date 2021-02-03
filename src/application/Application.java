@@ -1,5 +1,9 @@
 package application;
 
+import bubbleSorts.BubbleSort;
+import simpleSorts.InsertionSort;
+import simpleSorts.SelectionSort;
+
 /**
  * Contains the main method of the application.
  * 
@@ -7,6 +11,11 @@ package application;
  */
 public class Application {
 
+    private static final Integer[] SORTED_INTEGER_ARRAY =
+            {1, 1, 3, 4, 5, 6, 7, 7, 7, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    private static final Integer[] SHUFFLED_INTEGER_ARRAY = 
+            ArrayShuffler.createShuffledIntegerArrayOfSize(20);
+    
     /**
      * Main method used to execute the sorting algorithms.
      * 

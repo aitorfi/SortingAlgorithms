@@ -6,6 +6,7 @@ import java.util.Arrays;
 /**
  * Bubble sort is a sorting algorithm that repeatedly steps through the list,
  * compares adjacent elements and swaps them if they are in the wrong order.
+ * 
  * <ul>
  *  <li>Worst-case performance: O(n^2) comparisons and swaps.</li>
  *  <li>Best-case performance: O(n) comparisons and O(1) swaps.</li>
@@ -57,8 +58,9 @@ public class BubbleSort {
         intArray = ArrayShuffler.shuffleIntegerArray(intArray);
         Integer swapInt;
         Boolean swapped;
-        Integer counter = 0, unsortedElements = intArray.length;
+        Integer swaps = 0, unsortedElements = intArray.length;
         
+        System.out.println("Bubble Sort:");
         System.out.println("Shuffled Integer array:\n" + Arrays.toString(intArray));
         do{
             swapped = false;
@@ -68,12 +70,11 @@ public class BubbleSort {
                     intArray[i] = intArray[i+1];
                     intArray[i+1] = swapInt;
                     swapped = true;
+                    swaps++;
                 }
             }
             unsortedElements--;
-            counter++;
-            System.out.println("Sorting Integer array (step " + counter + "):");
-            System.out.println(Arrays.toString(intArray));
+            System.out.println(Arrays.toString(intArray) + " (Swaps: " + swaps + ")");
         } while(swapped);
     }
 }
